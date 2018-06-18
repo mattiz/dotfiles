@@ -1,0 +1,29 @@
+[user]
+        name = Mathias Bjerke
+        email = mathbje@gmail.com
+
+[alias]
+        stat = status
+        s = status
+        l = log --oneline --decorate
+        lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+        co = checkout
+	br = branch
+	pom = push origin master
+
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	snap = "!f() { ORG=$(git branch-name); git checkout stage && git merge \"$ORG\" && git push origin \"$ORG\" && git checkout \"$ORG\"; }; f"
+
+[color]
+        ui = auto
+
+[github]
+        user = mattiz
+[core]
+        editor = vim
+[credential]
+	helper = cache --timeout=172800
+[http]
+	sslVerify = false
+[push]
+	default = simple
