@@ -12,3 +12,10 @@ export PATH=~/wiki/bin/:/opt/java/bin/:/opt/sbt/bin:/opt/scala/bin:/opt/maven/bi
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+
+#
+#
+#
+export EDITOR=vim
+export VISUAL=vim

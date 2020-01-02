@@ -180,3 +180,18 @@ fstash() {
       fi
     done
 }
+
+
+fapt() {
+  local pkg=$(apt-cache search $1 | fzf --no-multi -q $1 --ansi --preview="apt-cache show {1}" | awk '{ print $1 }')
+
+  if [[ $pkg ]]; then
+    sudo apt-get install $pkg
+  fi
+}
+
+fif() {
+  #if [ ! "$#" -gte 1 ]; then echo "Need a string to search for!"; return 1; fi
+  rg -i --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
+  #ag --nobreak --nonumbers --noheading --files-with-matches . | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
+}
