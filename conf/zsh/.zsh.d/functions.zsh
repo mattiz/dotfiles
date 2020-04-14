@@ -190,8 +190,9 @@ fapt() {
   fi
 }
 
-fif() {
+# fif() {
   #if [ ! "$#" -gte 1 ]; then echo "Need a string to search for!"; return 1; fi
-  rg -i --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
+#  rg -i --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
   #ag --nobreak --nonumbers --noheading --files-with-matches . | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
-}
+#}
+
