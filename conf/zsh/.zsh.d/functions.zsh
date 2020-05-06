@@ -196,3 +196,15 @@ fapt() {
   #ag --nobreak --nonumbers --noheading --files-with-matches . | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
 #}
 
+
+#
+# Generate random password
+#
+passgen() {
+	passlength=$1
+
+	[ ! -z "$passlength" ] || passlength=15
+
+	< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${passlength};
+	echo;
+}
