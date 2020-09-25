@@ -66,7 +66,3 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 for config (~/.zsh.d/*.zsh) source $config
 
-
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
